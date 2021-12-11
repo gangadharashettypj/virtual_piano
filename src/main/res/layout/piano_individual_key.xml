@@ -2,7 +2,7 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
-        android:id="@+id/pressing_layout"
+        android:id="@+id/pressing_shadow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_piano_white_key_shadow"
