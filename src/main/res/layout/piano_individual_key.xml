@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/black_key"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_piano_key_grey"
-    android:orientation="vertical">
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
-        android:id="@+id/white_key"
+        android:id="@+id/pressing_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_piano_key_white"
-        android:layout_marginBottom="16dp">
+        android:background="@drawable/bg_piano_white_key_shadow"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/key_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
+        <RelativeLayout
+            android:id="@+id/white_key"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_piano_white_key">
+
+            <TextView
+                android:id="@+id/key_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
-
-
-</RelativeLayout>
+</merge>

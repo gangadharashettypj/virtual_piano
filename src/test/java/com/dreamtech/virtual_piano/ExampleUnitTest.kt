@@ -1,4 +1,4 @@
-package com.dreamtech.myapplication
+package com.dreamtech.virtual_piano
 
 import org.junit.Test
 

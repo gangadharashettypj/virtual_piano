@@ -1,4 +1,4 @@
-package com.dreamtech.myapplication
+package com.dreamtech.virtual_piano
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
