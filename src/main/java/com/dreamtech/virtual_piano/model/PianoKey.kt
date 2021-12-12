@@ -8,6 +8,7 @@ data class PianoKeyStyle(
     var keyColor: Int,
     var pressedShadowColor: Int,
     var labelColor: Int,
+    var labelSize: Float,
     var shadowHeight: Float,
     var cornerRadii: FloatArray,
 ) {
@@ -22,6 +23,7 @@ data class PianoKeyStyle(
         if (keyColor != other.keyColor) return false
         if (pressedShadowColor != other.pressedShadowColor) return false
         if (labelColor != other.labelColor) return false
+        if (labelSize != other.labelSize) return false
         if (shadowHeight != other.shadowHeight) return false
         if (!cornerRadii.contentEquals(other.cornerRadii)) return false
 
@@ -34,6 +36,7 @@ data class PianoKeyStyle(
         result = 31 * result + keyColor
         result = 31 * result + pressedShadowColor
         result = 31 * result + labelColor
+        result = 31 * result + labelSize.hashCode()
         result = 31 * result + shadowHeight.hashCode()
         result = 31 * result + cornerRadii.contentHashCode()
         return result

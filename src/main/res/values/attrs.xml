@@ -7,6 +7,7 @@
         <attr name="keyColor" format="color" />
         <attr name="pressedShadowColor" format="color" />
         <attr name="labelColor" format="color" />
+        <attr name="labelSize" format="dimension" />
         <attr name="topLeftRadius" format="float" />
         <attr name="topRightRadius" format="float" />
         <attr name="bottomLeftRadius" format="float" />

@@ -6,6 +6,8 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
+import android.util.DisplayMetrics
+import android.util.TypedValue
 import android.view.MotionEvent
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -31,13 +33,13 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
         setBorderWidth(
             attributes.getInt(
                 R.styleable.StandardPianoKey_outerBorderWidth,
-                pianoKey.style.borderWidth
+                this.pianoKey.style.borderWidth
             ), false
         )
         setAnimationDuration(
             attributes.getInt(
                 R.styleable.StandardPianoKey_animationDuration,
-                pianoKey.animationDuration.toInt()
+                this.pianoKey.animationDuration.toInt()
             ).toLong(), false
         )
         setStrokeColor(
@@ -62,6 +64,12 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
             attributes.getColor(
                 R.styleable.StandardPianoKey_labelColor,
                 Color.BLACK,
+            ), false
+        )
+        setKeyLabelSize(
+            attributes.getDimension(
+                R.styleable.StandardPianoKey_labelSize,
+                64f,
             ), false
         )
 
@@ -115,7 +123,7 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
                         params.bottomMargin = valueAnimator.animatedValue as Int
                         animatedView.requestLayout()
                     }
-                    animator.duration = pianoKey.animationDuration
+                    animator.duration = this.pianoKey.animationDuration
                     animator.start()
                     onTapDown?.invoke()
                 }
@@ -124,13 +132,13 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
                     val params = animatedView.layoutParams as LayoutParams
                     val animator = ValueAnimator.ofInt(
                         params.bottomMargin,
-                        pianoKey.style.shadowHeight.toInt().px,
+                        this.pianoKey.style.shadowHeight.toInt().px,
                     )
                     animator.addUpdateListener { valueAnimator ->
                         params.bottomMargin = valueAnimator.animatedValue as Int
                         animatedView.requestLayout()
                     }
-                    animator.duration = pianoKey.animationDuration
+                    animator.duration = this.pianoKey.animationDuration
                     animator.start()
                     onTapRelease?.invoke()
                 }
@@ -149,7 +157,7 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
     }
 
     fun setCornerRadii(array: FloatArray, sync: Boolean = true) {
-        pianoKey.style.cornerRadii = floatArrayOf(
+        this.pianoKey.style.cornerRadii = floatArrayOf(
             array[0],
             array[0],
             array[1],
@@ -164,109 +172,119 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
 
     fun getCornerRadii(): FloatArray {
         return floatArrayOf(
-            pianoKey.style.cornerRadii[0],
-            pianoKey.style.cornerRadii[2],
-            pianoKey.style.cornerRadii[4],
-            pianoKey.style.cornerRadii[6]
+            this.pianoKey.style.cornerRadii[0],
+            this.pianoKey.style.cornerRadii[2],
+            this.pianoKey.style.cornerRadii[4],
+            this.pianoKey.style.cornerRadii[6]
         )
     }
 
     fun setShadowHeight(height: Float, sync: Boolean = true) {
-        pianoKey.style.shadowHeight = height
+        this.pianoKey.style.shadowHeight = height
         if (sync) syncKeyStyle()
     }
 
     fun getShadowHeight(): Float {
-        return pianoKey.style.shadowHeight
+        return this.pianoKey.style.shadowHeight
     }
 
     fun setBorderWidth(width: Int, sync: Boolean = true) {
-        pianoKey.style.borderWidth = width
+        this.pianoKey.style.borderWidth = width
         if (sync) syncKeyStyle()
     }
 
     fun getBorderWidth(): Int {
-        return pianoKey.style.borderWidth
+        return this.pianoKey.style.borderWidth
     }
 
     fun setStrokeColor(color: Int, sync: Boolean = true) {
-        pianoKey.style.strokeColor = color
+        this.pianoKey.style.strokeColor = color
         if (sync) syncKeyStyle()
     }
 
     fun getStrokeColor(): Int {
-        return pianoKey.style.strokeColor
+        return this.pianoKey.style.strokeColor
     }
 
     fun setLabelColor(color: Int, sync: Boolean = true) {
-        pianoKey.style.labelColor = color
+        this.pianoKey.style.labelColor = color
         if (sync) syncKeyStyle()
     }
 
     fun getLabelColor(): Int {
-        return pianoKey.style.labelColor
+        return this.pianoKey.style.labelColor
     }
 
     fun setPressedShadowColor(color: Int, sync: Boolean = true) {
-        pianoKey.style.pressedShadowColor = color
+        this.pianoKey.style.pressedShadowColor = color
         if (sync) syncKeyStyle()
     }
 
     fun getPressedShadowColor(): Int {
-        return pianoKey.style.pressedShadowColor
+        return this.pianoKey.style.pressedShadowColor
     }
 
     fun setKeyColor(color: Int, sync: Boolean = true) {
-        pianoKey.style.keyColor = color
+        this.pianoKey.style.keyColor = color
         if (sync) syncKeyStyle()
     }
 
     fun getKeyColor(): Int {
-        return pianoKey.style.keyColor
+        return this.pianoKey.style.keyColor
     }
 
     fun setKeyStyle(keyStyle: PianoKeyStyle, sync: Boolean = true) {
-        pianoKey.style = keyStyle
+        this.pianoKey.style = keyStyle
         if (sync) syncKeyStyle()
     }
 
     fun getKeyStyle(): PianoKeyStyle {
-        return pianoKey.style
+        return this.pianoKey.style
     }
 
     fun setAnimationDuration(duration: Long, sync: Boolean = true) {
-        pianoKey.animationDuration = duration
+        this.pianoKey.animationDuration = duration
         if (sync) syncKeyStyle()
     }
 
     fun getAnimationDuration(): Long {
-        return pianoKey.animationDuration
+        return this.pianoKey.animationDuration
     }
 
     fun setKeyLabel(keyLabel: CharSequence?, sync: Boolean = true) {
-        pianoKey.label = keyLabel.toString()
+        this.pianoKey.label = keyLabel.toString()
         if (sync) syncKeyStyle()
     }
 
     fun getKeyLabel(): String {
-        return pianoKey.label
+        return this.pianoKey.label
+    }
+
+    fun setKeyLabelSize(size: Float, sync: Boolean = true) {
+        this.pianoKey.style.labelSize = size
+        if (sync) syncKeyStyle()
+    }
+
+    fun getKeyLabelSize(): Float {
+        return this.pianoKey.style.labelSize
     }
 
 
     private fun syncKeyStyle() {
-        pressingShadow.setBackgroundResource(R.drawable.bg_piano_white_key_shadow)
-        key.setBackgroundResource(R.drawable.bg_piano_white_key)
+        val pressingShadowBgShape = GradientDrawable()
+        pressingShadowBgShape.cornerRadii = this.pianoKey.style.cornerRadii
+        pressingShadowBgShape.setColor(this.pianoKey.style.pressedShadowColor)
+        pressingShadow.background = pressingShadowBgShape
 
-        val pressingShadowBgShape = pressingShadow.background as GradientDrawable
-        pressingShadowBgShape.cornerRadii = pianoKey.style.cornerRadii
-        pressingShadowBgShape.setColor(pianoKey.style.pressedShadowColor)
+        val keyBgShape = GradientDrawable()
+        keyBgShape.setColor(this.pianoKey.style.keyColor)
+        keyBgShape.setStroke(this.pianoKey.style.borderWidth, this.pianoKey.style.strokeColor)
+        keyBgShape.cornerRadii = this.pianoKey.style.cornerRadii
+        key.background = keyBgShape
 
-        val keyBgShape = key.background as GradientDrawable
-        keyBgShape.setColor(pianoKey.style.keyColor)
-        keyBgShape.setStroke(pianoKey.style.borderWidth, pianoKey.style.strokeColor)
-        keyBgShape.cornerRadii = pianoKey.style.cornerRadii
 
-        keyLabel.text = pianoKey.label
-        keyLabel.setTextColor(pianoKey.style.labelColor)
+        keyLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX, this.pianoKey.style.labelSize)
+        keyLabel.text = this.pianoKey.label
+        keyLabel.setTextColor(this.pianoKey.style.labelColor)
     }
 }
