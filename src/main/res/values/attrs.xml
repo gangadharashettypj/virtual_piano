@@ -13,6 +13,7 @@
         <attr name="bottomLeftRadius" format="float" />
         <attr name="bottomRightRadius" format="float" />
         <attr name="animationDuration" format="integer" />
+        <attr name="pressedHeight" format="dimension" />
         <attr name="default_style" format="enum">
             <enum name="white" value="0" />
             <enum name="black" value="1" />

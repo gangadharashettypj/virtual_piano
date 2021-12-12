@@ -14,6 +14,7 @@ abstract class VirtualPianoConstants {
             cornerRadii = floatArrayOf(0f, 0f, 0f, 0f, 32f, 32f, 32f, 32f),
             shadowHeight = 16f,
             labelSize = 64f,
+            pressedHeight = 64f,
         )
         val BLACK_KEY_STYLE = PianoKeyStyle(
             borderWidth = 0,
@@ -24,6 +25,7 @@ abstract class VirtualPianoConstants {
             cornerRadii = floatArrayOf(0f, 0f, 0f, 0f, 32f, 32f, 32f, 32f),
             shadowHeight = 16f,
             labelSize = 64f,
+            pressedHeight = 64f,
         )
     }
 

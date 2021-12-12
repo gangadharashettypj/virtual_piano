@@ -6,13 +6,14 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
-import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.MotionEvent
+import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.dreamtech.virtual_piano.model.PianoKey
 import com.dreamtech.virtual_piano.model.PianoKeyStyle
+
 
 @SuppressLint("ClickableViewAccessibility", "CutPasteId")
 class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, attrs) {
@@ -69,6 +70,12 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
         setKeyLabelSize(
             attributes.getDimension(
                 R.styleable.StandardPianoKey_labelSize,
+                64f,
+            ), false
+        )
+        setPressedHeight(
+            attributes.getDimension(
+                R.styleable.StandardPianoKey_pressedHeight,
                 64f,
             ), false
         )
@@ -269,6 +276,15 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
         return this.pianoKey.style.labelSize
     }
 
+    fun setPressedHeight(height: Float, sync: Boolean = true) {
+        this.pianoKey.style.pressedHeight = height
+        if (sync) syncKeyStyle()
+    }
+
+    fun getPressedHeight(): Float {
+        return this.pianoKey.style.pressedHeight
+    }
+
 
     private fun syncKeyStyle() {
         val pressingShadowBgShape = GradientDrawable()
@@ -281,7 +297,13 @@ class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, 
         keyBgShape.setStroke(this.pianoKey.style.borderWidth, this.pianoKey.style.strokeColor)
         keyBgShape.cornerRadii = this.pianoKey.style.cornerRadii
         key.background = keyBgShape
-
+        val params =
+            LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        params.setMargins(
+            0, 0, 0,
+            this.pianoKey.style.pressedHeight.toInt()
+        )
+        key.layoutParams = params
 
         keyLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX, this.pianoKey.style.labelSize)
         keyLabel.text = this.pianoKey.label
