@@ -12,7 +12,6 @@ abstract class VirtualPianoConstants {
             pressedShadowColor = 0xFFC8C8C8.toInt(),
             labelColor = Color.BLACK,
             cornerRadii = floatArrayOf(0f, 0f, 0f, 0f, 32f, 32f, 32f, 32f),
-            shadowHeight = 16f,
             labelSize = 64f,
             pressedHeight = 64f,
         )
@@ -23,7 +22,6 @@ abstract class VirtualPianoConstants {
             pressedShadowColor = 0xFF2F2F2F.toInt(),
             labelColor = Color.WHITE,
             cornerRadii = floatArrayOf(0f, 0f, 0f, 0f, 32f, 32f, 32f, 32f),
-            shadowHeight = 16f,
             labelSize = 64f,
             pressedHeight = 64f,
         )
