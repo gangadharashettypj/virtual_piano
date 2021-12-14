@@ -11,7 +11,7 @@
         <entry key="app/src/main/res/drawable/bg_piano_key_white.xml" value="0.335" />
         <entry key="app/src/main/res/drawable/scale.xml" value="0.13518518518518519" />
         <entry key="app/src/main/res/drawable/translate.xml" value="0.35648148148148145" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.362962962962963" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/piano_individual_key.xml" value="0.335" />
         <entry key="virtual_piano/src/main/res/drawable/bg_piano_black_key_shadow.xml" value="0.33425925925925926" />
         <entry key="virtual_piano/src/main/res/drawable/bg_piano_key_black.xml" value="0.35648148148148145" />

@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'maven-publish'
-
 }
 
 android {
@@ -12,7 +11,7 @@ android {
         minSdk 16
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -51,7 +50,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.gangadharashettypj'
                 artifactId = 'virtual_piano'
-                version = '1.0'
+                version = '1.1'
             }
         }
     }

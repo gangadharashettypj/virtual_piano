@@ -16,7 +16,7 @@ import com.dreamtech.virtual_piano.model.PianoKeyStyle
 
 
 @SuppressLint("ClickableViewAccessibility", "CutPasteId")
-class PianoKey(context: Context, attrs: AttributeSet) : RelativeLayout(context, attrs) {
+class PianoKey(context: Context, attrs: AttributeSet?) : RelativeLayout(context, attrs) {
 
     private var onTapDown: (() -> Unit)? = null
     private var onTapRelease: (() -> Unit)? = null
