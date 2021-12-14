@@ -10,7 +10,6 @@ data class PianoKeyStyle(
     var labelColor: Int,
     var labelSize: Float,
     var pressedHeight: Float,
-    var shadowHeight: Float,
     var cornerRadii: FloatArray,
 ) {
     override fun equals(other: Any?): Boolean {
@@ -26,7 +25,6 @@ data class PianoKeyStyle(
         if (labelColor != other.labelColor) return false
         if (labelSize != other.labelSize) return false
         if (pressedHeight != other.pressedHeight) return false
-        if (shadowHeight != other.shadowHeight) return false
         if (!cornerRadii.contentEquals(other.cornerRadii)) return false
 
         return true
@@ -40,7 +38,6 @@ data class PianoKeyStyle(
         result = 31 * result + labelColor
         result = 31 * result + labelSize.hashCode()
         result = 31 * result + pressedHeight.hashCode()
-        result = 31 * result + shadowHeight.hashCode()
         result = 31 * result + cornerRadii.contentHashCode()
         return result
     }

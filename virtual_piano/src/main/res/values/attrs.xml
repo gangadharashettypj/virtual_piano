@@ -2,18 +2,18 @@
 <resources>
     <declare-styleable name="StandardPianoKey">
         <attr name="label" format="string" />
-        <attr name="outerBorderWidth" format="integer" />
-        <attr name="strokeColor" format="color" />
-        <attr name="keyColor" format="color" />
-        <attr name="pressedShadowColor" format="color" />
-        <attr name="labelColor" format="color" />
-        <attr name="labelSize" format="dimension" />
-        <attr name="topLeftRadius" format="float" />
-        <attr name="topRightRadius" format="float" />
-        <attr name="bottomLeftRadius" format="float" />
-        <attr name="bottomRightRadius" format="float" />
-        <attr name="animationDuration" format="integer" />
-        <attr name="pressedHeight" format="dimension" />
+        <attr name="outer_border_width" format="integer" />
+        <attr name="stroke_color" format="color" />
+        <attr name="key_color" format="color" />
+        <attr name="pressed_shadow_color" format="color" />
+        <attr name="label_color" format="color" />
+        <attr name="label_size" format="dimension" />
+        <attr name="top_left_radius" format="float" />
+        <attr name="top_right_radius" format="float" />
+        <attr name="bottom_left_radius" format="float" />
+        <attr name="bottom_right_radius" format="float" />
+        <attr name="animation_duration" format="integer" />
+        <attr name="pressed_height" format="dimension" />
         <attr name="default_style" format="enum">
             <enum name="white" value="0" />
             <enum name="black" value="1" />

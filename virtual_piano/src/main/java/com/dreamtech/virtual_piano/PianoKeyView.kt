@@ -34,49 +34,49 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) : RelativeL
         setKeyLabel(attributes.getString(R.styleable.StandardPianoKey_label))
         setBorderWidth(
             attributes.getInt(
-                R.styleable.StandardPianoKey_outerBorderWidth,
+                R.styleable.StandardPianoKey_outer_border_width,
                 this.pianoKey.style.borderWidth
             ), false
         )
         setAnimationDuration(
             attributes.getInt(
-                R.styleable.StandardPianoKey_animationDuration,
+                R.styleable.StandardPianoKey_animation_duration,
                 this.pianoKey.animationDuration.toInt()
             ).toLong(), false
         )
         setStrokeColor(
             attributes.getColor(
-                R.styleable.StandardPianoKey_strokeColor,
+                R.styleable.StandardPianoKey_stroke_color,
                 Color.WHITE,
             ), false
         )
         setKeyColor(
             attributes.getColor(
-                R.styleable.StandardPianoKey_keyColor,
+                R.styleable.StandardPianoKey_key_color,
                 Color.WHITE,
             ), false
         )
         setPressedShadowColor(
             attributes.getColor(
-                R.styleable.StandardPianoKey_pressedShadowColor,
+                R.styleable.StandardPianoKey_pressed_shadow_color,
                 0xFFC8C8C8.toInt(),
             ), false
         )
         setLabelColor(
             attributes.getColor(
-                R.styleable.StandardPianoKey_labelColor,
+                R.styleable.StandardPianoKey_label_color,
                 Color.BLACK,
             ), false
         )
         setKeyLabelSize(
             attributes.getDimension(
-                R.styleable.StandardPianoKey_labelSize,
+                R.styleable.StandardPianoKey_label_size,
                 64f,
             ), false
         )
         setPressedHeight(
             attributes.getDimension(
-                R.styleable.StandardPianoKey_pressedHeight,
+                R.styleable.StandardPianoKey_pressed_height,
                 64f,
             ), false
         )
@@ -93,22 +93,22 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) : RelativeL
         setCornerRadii(
             floatArrayOf(
                 attributes.getFloat(
-                    R.styleable.StandardPianoKey_topLeftRadius,
+                    R.styleable.StandardPianoKey_top_left_radius,
                     0f,
                 ),
 
                 attributes.getFloat(
-                    R.styleable.StandardPianoKey_topRightRadius,
+                    R.styleable.StandardPianoKey_top_right_radius,
                     0f,
                 ),
 
                 attributes.getFloat(
-                    R.styleable.StandardPianoKey_bottomRightRadius,
+                    R.styleable.StandardPianoKey_bottom_right_radius,
                     16f,
                 ),
 
                 attributes.getFloat(
-                    R.styleable.StandardPianoKey_bottomLeftRadius,
+                    R.styleable.StandardPianoKey_bottom_left_radius,
                     16f,
                 ),
             ), false
@@ -140,7 +140,7 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) : RelativeL
                     val params = animatedView.layoutParams as LayoutParams
                     val animator = ValueAnimator.ofInt(
                         params.bottomMargin,
-                        this.pianoKey.style.shadowHeight.toInt().px,
+                        this.pianoKey.style.pressedHeight.toInt(),
                     )
                     animator.addUpdateListener { valueAnimator ->
                         params.bottomMargin = valueAnimator.animatedValue as Int
@@ -185,15 +185,6 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) : RelativeL
             this.pianoKey.style.cornerRadii[4],
             this.pianoKey.style.cornerRadii[6]
         )
-    }
-
-    fun setShadowHeight(height: Float, sync: Boolean = true) {
-        this.pianoKey.style.shadowHeight = height
-        if (sync) syncKeyStyle()
-    }
-
-    fun getShadowHeight(): Float {
-        return this.pianoKey.style.shadowHeight
     }
 
     fun setBorderWidth(width: Int, sync: Boolean = true) {
