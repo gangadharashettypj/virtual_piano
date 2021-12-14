@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StandardPianoKey">
+        <attr name="label" format="string" />
+        <attr name="outerBorderWidth" format="integer" />
+        <attr name="strokeColor" format="color" />
+        <attr name="keyColor" format="color" />
+        <attr name="pressedShadowColor" format="color" />
+        <attr name="labelColor" format="color" />
+        <attr name="labelSize" format="dimension" />
+        <attr name="topLeftRadius" format="float" />
+        <attr name="topRightRadius" format="float" />
+        <attr name="bottomLeftRadius" format="float" />
+        <attr name="bottomRightRadius" format="float" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="pressedHeight" format="dimension" />
+        <attr name="default_style" format="enum">
+            <enum name="white" value="0" />
+            <enum name="black" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="BenefitView">
+        <attr name="image" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+</resources>
