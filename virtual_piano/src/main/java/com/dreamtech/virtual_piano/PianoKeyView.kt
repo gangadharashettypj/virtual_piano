@@ -11,12 +11,13 @@ import android.view.MotionEvent
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.annotation.Nullable
 import com.dreamtech.virtual_piano.model.PianoKey
 import com.dreamtech.virtual_piano.model.PianoKeyStyle
 
 
 @SuppressLint("ClickableViewAccessibility", "CutPasteId")
-class PianoKeyView(context: Context, attrs: AttributeSet?) : RelativeLayout(context, attrs) {
+class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) : RelativeLayout(context, attrs) {
 
     private var onTapDown: (() -> Unit)? = null
     private var onTapRelease: (() -> Unit)? = null
