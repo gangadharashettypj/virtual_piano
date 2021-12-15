@@ -5,7 +5,7 @@
         <attr name="outer_border_width" format="integer" />
         <attr name="stroke_color" format="color" />
         <attr name="key_color" format="color" />
-        <attr name="pressed_shadow_color" format="color" />
+        <attr name="shadow_color" format="color" />
         <attr name="label_color" format="color" />
         <attr name="label_size" format="dimension" />
         <attr name="top_left_radius" format="float" />
@@ -14,6 +14,7 @@
         <attr name="bottom_right_radius" format="float" />
         <attr name="animation_duration" format="integer" />
         <attr name="pressed_height" format="dimension" />
+        <attr name="pressed_color" format="color" />
         <attr name="default_style" format="enum">
             <enum name="white" value="0" />
             <enum name="black" value="1" />
