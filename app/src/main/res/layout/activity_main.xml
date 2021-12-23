@@ -8,7 +8,6 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,7 +37,6 @@
             <com.dreamtech.virtual_piano.PianoKeyView
                 android:layout_width="50dp"
                 android:layout_height="300dp"
-
                 app:label="D"
                 app:pressed_height="16dp" />
 
