@@ -9,119 +9,123 @@
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="300dp"
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="300dp"
 
-            app:label="C"
-            app:pressed_height="16dp"
-            app:top_left_radius="32" />
+                app:label="C"
+                app:pressed_height="16dp"
+                app:top_left_radius="32" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="-23dp"
-            android:layout_marginRight="-23dp"
-            android:elevation="2dp"
-            app:default_style="black"
-            app:label="C#"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="-23dp"
+                android:layout_marginRight="-23dp"
+                android:elevation="2dp"
+                app:default_style="black"
+                app:label="C#"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="300dp"
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="300dp"
 
-            app:label="D"
-            app:pressed_height="16dp" />
+                app:label="D"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="-23dp"
-            android:layout_marginRight="-23dp"
-            android:elevation="2dp"
-            app:default_style="black"
-            app:label="D#"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="-23dp"
+                android:layout_marginRight="-23dp"
+                android:elevation="2dp"
+                app:default_style="black"
+                app:label="D#"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="300dp"
-            app:label="E"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="300dp"
+                app:label="E"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="-23dp"
-            android:layout_marginRight="-23dp"
-            android:elevation="2dp"
-            android:visibility="invisible"
-            app:default_style="black"
-            app:label="E#"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="-23dp"
+                android:layout_marginRight="-23dp"
+                android:elevation="2dp"
+                android:visibility="invisible"
+                app:default_style="black"
+                app:label="E#"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="300dp"
-            app:label="F"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="300dp"
+                app:label="F"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="-23dp"
-            android:layout_marginRight="-23dp"
-            android:elevation="2dp"
-            app:default_style="black"
-            app:label="F#"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="-23dp"
+                android:layout_marginRight="-23dp"
+                android:elevation="2dp"
+                app:default_style="black"
+                app:label="F#"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="300dp"
-            app:label="G"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="300dp"
+                app:label="G"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="-23dp"
-            android:layout_marginRight="-23dp"
-            android:elevation="2dp"
-            app:default_style="black"
-            app:label="G#"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="-23dp"
+                android:layout_marginRight="-23dp"
+                android:elevation="2dp"
+                app:default_style="black"
+                app:label="G#"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="300dp"
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="300dp"
+                app:label="A"
+                app:pressed_height="16dp" />
 
-            app:label="A"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="-23dp"
+                android:layout_marginRight="-23dp"
+                android:elevation="2dp"
+                app:default_style="black"
+                app:label="A#"
+                app:pressed_height="16dp" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="-23dp"
-            android:layout_marginRight="-23dp"
-            android:elevation="2dp"
-            app:default_style="black"
-            app:label="A#"
-            app:pressed_height="16dp" />
+            <com.dreamtech.virtual_piano.PianoKeyView
+                android:layout_width="50dp"
+                android:layout_height="300dp"
+                app:label="B"
+                app:pressed_height="16dp"
+                app:top_right_radius="32" />
 
-        <com.dreamtech.virtual_piano.PianoKeyView
-            android:layout_width="50dp"
-            android:layout_height="300dp"
-            app:label="B"
-            app:pressed_height="16dp"
-            app:top_right_radius="32" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
-    </LinearLayout>
 
 </LinearLayout>

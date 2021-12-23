@@ -32,77 +32,75 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) :
         initComponents()
 
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.StandardPianoKey)
-        if (attributes.getInt(R.styleable.StandardPianoKey_default_style, -1) == 0) {
+        if (attributes.getInt(R.styleable.StandardPianoKey_default_style, -1) == 0 ||attributes.getInt(R.styleable.StandardPianoKey_default_style, -1) == -1) {
             this.pianoKey.style = VirtualPianoConstants.WHITE_KEY_STYLE
         }
-
         else if (attributes.getInt(R.styleable.StandardPianoKey_default_style, -1) == 1) {
             this.pianoKey.style = VirtualPianoConstants.BLACK_KEY_STYLE
-        } else{
-            this.pianoKey.style.borderWidth = attributes.getInt(
-                R.styleable.StandardPianoKey_outer_border_width,
-                this.pianoKey.style.borderWidth
-            )
-            this.pianoKey.style.strokeColor = attributes.getColor(
-                R.styleable.StandardPianoKey_stroke_color,
-                Color.WHITE,
-            )
-            this.pianoKey.style.keyColor = attributes.getColor(
-                R.styleable.StandardPianoKey_key_color,
-                Color.WHITE,
-            )
-            this.pianoKey.style.shadowColor = attributes.getColor(
-                R.styleable.StandardPianoKey_shadow_color,
-                0xFFC8C8C8.toInt(),
-            )
-            this.pianoKey.style.labelColor = attributes.getColor(
-                R.styleable.StandardPianoKey_label_color,
-                Color.BLACK,
-            )
-            this.pianoKey.style.labelSize = attributes.getDimension(
-                R.styleable.StandardPianoKey_label_size,
-                64f,
-            )
-            this.pianoKey.style.pressedHeight = attributes.getDimension(
-                R.styleable.StandardPianoKey_pressed_height,
-                64f,
-            )
-            this.pianoKey.style.pressedColor = attributes.getColor(
-                R.styleable.StandardPianoKey_pressed_color,
-                0xFF8DD599.toInt(),
-            )
-            val array = floatArrayOf(
-                attributes.getFloat(
-                    R.styleable.StandardPianoKey_top_left_radius,
-                    0f,
-                ),
-
-                attributes.getFloat(
-                    R.styleable.StandardPianoKey_top_right_radius,
-                    0f,
-                ),
-
-                attributes.getFloat(
-                    R.styleable.StandardPianoKey_bottom_right_radius,
-                    16f,
-                ),
-
-                attributes.getFloat(
-                    R.styleable.StandardPianoKey_bottom_left_radius,
-                    16f,
-                ),
-            )
-            this.pianoKey.style.cornerRadii = floatArrayOf(
-                array[0],
-                array[0],
-                array[1],
-                array[1],
-                array[2],
-                array[2],
-                array[3],
-                array[3],
-            )
         }
+        this.pianoKey.style.borderWidth = attributes.getInt(
+            R.styleable.StandardPianoKey_outer_border_width,
+            this.pianoKey.style.borderWidth
+        )
+        this.pianoKey.style.strokeColor = attributes.getColor(
+            R.styleable.StandardPianoKey_stroke_color,
+            this.pianoKey.style.strokeColor,
+        )
+        this.pianoKey.style.keyColor = attributes.getColor(
+            R.styleable.StandardPianoKey_key_color,
+            this.pianoKey.style.keyColor,
+        )
+        this.pianoKey.style.shadowColor = attributes.getColor(
+            R.styleable.StandardPianoKey_shadow_color,
+            this.pianoKey.style.shadowColor,
+        )
+        this.pianoKey.style.labelColor = attributes.getColor(
+            R.styleable.StandardPianoKey_label_color,
+            this.pianoKey.style.labelColor,
+        )
+        this.pianoKey.style.labelSize = attributes.getDimension(
+            R.styleable.StandardPianoKey_label_size,
+            this.pianoKey.style.labelSize,
+        )
+        this.pianoKey.style.pressedHeight = attributes.getDimension(
+            R.styleable.StandardPianoKey_pressed_height,
+            this.pianoKey.style.pressedHeight,
+        )
+        this.pianoKey.style.pressedColor = attributes.getColor(
+            R.styleable.StandardPianoKey_pressed_color,
+            this.pianoKey.style.pressedColor,
+        )
+        val array = floatArrayOf(
+            attributes.getFloat(
+                R.styleable.StandardPianoKey_top_left_radius,
+                0f,
+            ),
+
+            attributes.getFloat(
+                R.styleable.StandardPianoKey_top_right_radius,
+                0f,
+            ),
+
+            attributes.getFloat(
+                R.styleable.StandardPianoKey_bottom_right_radius,
+                16f,
+            ),
+
+            attributes.getFloat(
+                R.styleable.StandardPianoKey_bottom_left_radius,
+                16f,
+            ),
+        )
+        this.pianoKey.style.cornerRadii = floatArrayOf(
+            array[0],
+            array[0],
+            array[1],
+            array[1],
+            array[2],
+            array[2],
+            array[3],
+            array[3],
+        )
         this.pianoKey.label = attributes.getString(R.styleable.StandardPianoKey_label).toString()
 
         this.pianoKey.animationDuration = attributes.getInt(
