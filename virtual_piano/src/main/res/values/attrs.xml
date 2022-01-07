@@ -13,8 +13,9 @@
         <attr name="bottom_left_radius" format="float" />
         <attr name="bottom_right_radius" format="float" />
         <attr name="animation_duration" format="integer" />
-        <attr name="pressed_height" format="dimension" />
+        <attr name="pressed_height" format="float" />
         <attr name="pressed_color" format="color" />
+        <attr name="view_only" format="boolean" />
         <attr name="default_style" format="enum">
             <enum name="white" value="0" />
             <enum name="black" value="1" />
