@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.dreamtech.virtual_piano.PianoKeyView
-import com.dreamtech.virtual_piano.VirtualPianoConstants
-import com.dreamtech.virtual_piano.model.PianoKeyStyle
 
 class PianoViewAdapter(
     private val items: MutableList<PianoKeyModel>,
@@ -17,6 +15,7 @@ class PianoViewAdapter(
     private val blackKeyHeight: Int = 350,
     private val whiteKeyWidth: Int = 150,
     private val whiteKeyHeight: Int = 500,
+    private val disableClicks: Boolean = false
 ) :
     RecyclerView.Adapter<ViewHolder<PianoKeyView>>() {
     private lateinit var v: PianoKeyView
@@ -27,21 +26,35 @@ class PianoViewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<PianoKeyView> {
         v = PianoKeyView(context, null)
-        v.
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder<PianoKeyView>, position: Int) {
-        val itemData = items[position]
-        v.setKeyLabel(itemData.label)
-        if(itemData.type == "white") {
-            v.setKeyStyle(VirtualPianoConstants.WHITE_KEY_STYLE)
-            v.setKeyLabelSize(10f)
-            v.layoutParams = RelativeLayout.LayoutParams(whiteKeyWidth, whiteKeyHeight)
-        }else{
-            v.setKeyStyle(VirtualPianoConstants.BLACK_KEY_STYLE)
-            v.setKeyLabelSize(10f)
-            v.layoutParams = RelativeLayout.LayoutParams(blackKeyWidth, blackKeyHeight)
+        with(holder.itemView as PianoKeyView) {
+            val itemData = items[position]
+
+            if (itemData.type == "white") {
+                setKeyStyle(itemData.type)
+                setKeyLabelSize(30f)
+                setPressedHeight(whiteKeyHeight * 0.12f)
+                val lp = RecyclerView.LayoutParams(whiteKeyWidth, whiteKeyHeight)
+                lp.setMargins(2, 0, 2, 0)
+                layoutParams = lp
+                elevation = 0f
+            } else {
+                setKeyStyle(itemData.type)
+                setKeyLabelSize(30f)
+                setPressedHeight(blackKeyHeight * 0.12f)
+                elevation = 2f
+                val lp = RecyclerView.LayoutParams(blackKeyWidth, blackKeyHeight)
+                lp.setMargins(-blackKeyWidth / 2, 0, -blackKeyWidth / 2, 0)
+                layoutParams = lp
+            }
+            setKeyLabel(itemData.label)
+            setViewOnly(disableClicks)
+            setCornerRadii(
+                floatArrayOf(2f, 2f, 26f, 26f),
+            )
         }
 
     }

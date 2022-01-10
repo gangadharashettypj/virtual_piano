@@ -10,28 +10,10 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMini"
-        android:layout_width="match_parent"
-        android:layout_height="60dp" >
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="300dp" >
 
     </androidx.recyclerview.widget.RecyclerView>
-
-
-    <eu.acolombo.minimap.MinimapView
-        android:id="@+id/minimapView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:minimapBackgroundColor="#9A9A9A"
-        app:minimapBorderWidth="3dp"
-        app:minimapCornerRadius="5dp"
-        app:minimapMaxSize="160dp"
-        android:visibility="gone"/>
 
 </LinearLayout>

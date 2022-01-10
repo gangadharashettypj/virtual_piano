@@ -3,9 +3,8 @@ package com.example.pianokeys
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import eu.acolombo.minimap.MinimapView
-import eu.acolombo.minimap.minimap
 
 
 class MainActivity : AppCompatActivity() {
@@ -97,21 +96,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val minimapView = findViewById<MinimapView>(R.id.minimapView)
         val pianoView = findViewById<RecyclerView>(R.id.recyclerView)
-        val layoutManager = PianoViewLinearLayoutManager()
+        val layoutManager = LinearLayoutManager(this)
+        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         pianoView.layoutManager = layoutManager
         pianoView.adapter = PianoViewAdapter(keys, this)
         pianoView.computeHorizontalScrollExtent()
-//        pianoView.minimap = minimapView
-        minimapView.setRecyclerView(pianoView)
-
-        val miniPianoView = findViewById<RecyclerView>(R.id.recyclerViewMini)
-        miniPianoView.layoutParams.width = visibleKeys * whiteKeyWidth
-        val layoutManager1 = PianoViewLinearLayoutManager()
-        miniPianoView.layoutManager = layoutManager1
-        miniPianoView.adapter = PianoViewAdapter(keys, this,blackKeyWidth,blackKeyHeight,whiteKeyWidth,whiteKeyHeight)
-        pianoView.computeHorizontalScrollExtent()
-
     }
 }
