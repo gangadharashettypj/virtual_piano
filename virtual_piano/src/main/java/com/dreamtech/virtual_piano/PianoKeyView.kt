@@ -349,9 +349,11 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) :
                 when (event?.action) {
                     MotionEvent.ACTION_DOWN -> {
                         pressKey()
+                        onTapDown?.invoke()
                     }
                     MotionEvent.ACTION_UP -> {
                         releaseKey()
+                        onTapRelease?.invoke()
                     }
                 }
                 true
@@ -374,7 +376,6 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) :
         }
         animator.duration = animationDuration
         animator.start()
-        onTapRelease?.invoke()
     }
 
     fun pressKey() {
@@ -389,6 +390,5 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) :
         }
         animator.duration = animationDuration
         animator.start()
-        onTapDown?.invoke()
     }
 }
