@@ -348,10 +348,10 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) :
             } else {
                 when (event?.action) {
                     MotionEvent.ACTION_DOWN -> {
-                        pressedDownListener()
+                        pressKey()
                     }
                     MotionEvent.ACTION_UP -> {
-                        pressedUpListener()
+                        releaseKey()
                     }
                 }
                 true
@@ -359,7 +359,7 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) :
         }
     }
 
-    private fun pressedUpListener() {
+    fun releaseKey() {
         val animatedView = findViewById<RelativeLayout>(R.id.white_key)
         val pressingShadowBgShape = animatedView.background as GradientDrawable
         pressingShadowBgShape.setColor(keyColor)
@@ -377,7 +377,7 @@ class PianoKeyView(context: Context, @Nullable attrs: AttributeSet?) :
         onTapRelease?.invoke()
     }
 
-    private fun pressedDownListener() {
+    fun pressKey() {
         val animatedView = findViewById<RelativeLayout>(R.id.white_key)
         val pressingShadowBgShape = animatedView.background as GradientDrawable
         pressingShadowBgShape.setColor(pressedColor)
